@@ -1,7 +1,7 @@
-export const apiBaseUrl = process.env.API_URL || "";
+export const apiBaseUrl = process.env.API_URL || "http://103.252.137.178:2030";
 
 export const apiUrl = (path: string): string => {
-	console.log(process.env.NEXT_PUBLIC_API_BASE_URL);
+	console.log(process.env.API_URL);
 	const base = apiBaseUrl.replace(/\/$/, '');
 	const suffix = path.startsWith('/') ? path : `/${path}`;
 	return `${base}${suffix}`;
