@@ -1,0 +1,25 @@
+name: nctelearning-database
+
+services: 
+  nctelearning-database: 
+    image: postgres:16
+    container_name: nctelearning-database 
+    restart: always 
+    environment: 
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: nctelearning
+    ports: 
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks: 
+      - nctelearning-network 
+    
+volumes: 
+  postgres_data:
+
+networks: 
+  nctelearning-network: 
+    name: nctelearning-network
+    external: true
