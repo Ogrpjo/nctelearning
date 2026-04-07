@@ -1,4 +1,4 @@
-export const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || "";
+export const apiBaseUrl = process.env.API_URL || "";
 
 export const apiUrl = (path: string): string => {
 	console.log(process.env.NEXT_PUBLIC_API_BASE_URL);
